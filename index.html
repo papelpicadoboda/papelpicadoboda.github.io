@@ -1,101 +1,453 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="bulma.min.css">
-    <title>Carrito</title>
-</head>
-<body>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Papel Picado Boda - Adornos en Papel Picado </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="img/main.jpg" rel="icon" type="image/png">
+        <link href="css/init.css" rel="stylesheet" type="text/css">
+        <link href="css/ion-icons.min.css" rel="stylesheet" type="text/css">
+        <link href="css/theme.css" rel="stylesheet" type="text/css">
+        <link href="css/colors/purple.css" rel="stylesheet" type="text/css">
+        
+    </head>
+    <body data-fade-in="true">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="#">
-          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-        </a>
-    </div>
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            <a href="#" class="navbar-item">
-                Tienda en Linea
-            </a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-                    <!-- BOTON ABRIR CARRITO -->
-                    <p class="control">
-                        <a href="#" id="btn_carrito" class="button is-info">
-                            <span class="icon">
-                                <i class="fa fa-shopping-cart"></i>
-                            </span>
-                            <span class="tag is-gray" id="totalProductos"><strong>0</strong></span>
-                        </a>
-                    </p>
+
+        <nav class="navbar nav-down" data-fullwidth="true" data-menu-style="transparent" data-animation="shrink">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <div class="container">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar top-bar"></span>
+                            <span class="icon-bar middle-bar"></span>
+                            <span class="icon-bar bottom-bar"></span>
+                        </button>
+                        <a class="navbar-brand to-top" href="index.html"><img src="img/info.png" class="logo-light" alt="Gallardetes, Bandera de Tela, Banderines, Gusanos, Cadenas, Faroles, Aguilas, Campanas, Rosetas, Abanicos, Chiles"><img src="img/info.png" class="logo-dark" alt="#"></a>
+                    </div>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <div class="container">
+                        <ul class="nav navbar-nav menu-right">
+
+                            <li><a href="index.html">Inicio</a></li>
+
+                            <li><a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">Contactanos</a></li>
+
+                            <li class="nav-separator"></li>
+                            <li  class="nav-icon"><a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                            <li  class="nav-icon"><a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/" target="_blank"><i class="ion-social-instagram"></i></a></li>
+                            <li  class="nav-icon"><a href="https://www.youtube.com/channel/UCqhJ9tspmmQnDLGF6AIyorg" target="_blank"><i class="ion-social-youtube"></i></a></li>
+                            <li  class="nav-icon"><a href="http://twitter.com/PapelPicadoHuix" target="_blank"><i class="ion-social-twitter"></i></a></li>
+                        </ul>
+
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</nav>
-
-<!-- ENCABEZADO -->
-<section class="hero is-info">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">Carrito Electrónico con Javascript</h1>
-            <h2 class="subtitle">Creando un carrito electrónico con vanilla js y localStorage</h2>
-        </div>
-    </div>
-</section>
-
-<!-- CATALOGO DE PRODUCTOS -->
-<section class="section">
-    <div class="container">
-        <div class="columns is-multiline" id="catalogo">
-
-        </div>
-    </div>
-</section>
-
-<!-- VENTANA MODAL -->
-<div class="modal" id="modal">
-    <div class="modal-background toggle"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">Carrito</p>
-            <button type="button" name="button" class="delete toggle"></button>
-        </header>
-        <section class="modal-card-body">
-            <div class="columns" id="productosCarrito-header">
-                <div class="column is-3 has-text-centered">Producto</div>
-                <div class="column is-3 has-text-centered">Nombre</div>
-                <div class="column is-2 has-text-centered">Precio</div>
-                <div class="column is-1 has-text-centered">Cant</div>
-                <div class="column is-2 has-text-centered">Total</div>
-                <div class="column is-1 has-text-centered">Quitar</div>
+        </nav>
+        
+        <section id="hero" class="hero-fullscreen parallax" data-overlay-dark="7">
+            <div class="background-image">
+                <img alt="Papel Picado Boda, Boda Mexicana, Boda, Boda en papel, Papel picado para boda" src="img/main.jpg" alt="#">
             </div>
-            <div id="productosCarrito">
-                <!-- PRODUCTOS AGREGADOS AL CARRITO -->
 
-            </div>
-            <div class="columns">
-                <div class="column is-9 has-text-right">
-                    <h1 class="title">TOTAL: </h1>
-                </div>
-                <div class="column is-3 has-text-centered">
-                    <p class="title is-3" id="totalCarrito"><strong>$0</strong></p>
+            <div class="container">
+                <div class="row">
+
+                    <div class="hero-content-slider mt20" data-autoplay="true" data-speed="4000">
+
+                        <div>
+                            <h1>Papel Picado Boda<br><strong>Boda a la Mexicana</strong></h1>
+                            <p class="lead">Papel Picado Boda - Boda Mexicana</p>
+                            <a href="#" class="btn btn-lg btn-primary btn-scroll">Comprar Ahora</a>
+                        </div>
+
+                        <div>
+                            <h1>Plasmamos en papel<br><strong> tus ideas y sueños</strong></h1>
+                            <p class="lead">Calidad y Arte hecha realidad</p>
+                            <a href="#" class="btn btn-lg btn-primary btn-scroll">Solicitar Cotizacion</a>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </section>
-        <footer class="modal-card-foot">
-            <a href="#" class="button is-success">Comprar</a>
-            <a href="#" class="button toggle">Cerrar</a>
-        </footer>
-    </div>
-</div>
+       
+        <section id="about" class="pt100 pb90">
+            <div class="container">
+                <div class="row">
 
-<script src="scripts.js" charset="utf-8"></script>
-</body>
+                    <div class="col-md-12 text-center pb20">
+                        <h2>Papel Picado Siempre Peregrino<br><strong>Catalogo Papel Picado Boda</strong></h2>
+                        <p class="lead">Plasmamos sueños e ideas <span class="color">en papel</span>, ofecemos servicio de 
+                        papel picado para boda,<br> adornos para boda, papel picado personalizado para boda, asi como <span class="color">envios</span> a toda la republica mexicana y envios internacionales</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+                <section id="testimonials" class="parallax pt100 pb90" data-overlay-dark="9">
+            <div class="background-image">
+                <img src="img/main4.jpg" alt="Gallardetes, Bandera de Tela, Banderines, Gusanos, Cadenas, Faroles, Aguilas, Campanas, Rosetas, Abanicos, Chiles">
+            </div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 text-center pb20">
+                        <h2>Recomendaciones<br><strong>Clientes</strong></h2>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+
+                        <div class="testimonials quote-icons" data-autoplay="false" data-speed="4000">
+
+                            <div>
+                                <p>
+                                    <i class="vossen-quote color"></i>
+                                    Una excelente atencion a cliente, me ayudaron mucho para que mi evento quedara espectacular<br><span class="color">Lo recomiendo ampliamente</span> todos su trabajo es sencillamente hermoso.
+                                    <i class="vossen-quote color"></i>
+                                </p>
+                                <h5><strong>Sandra Salas Hernandez</strong></h5>
+                                <p class="occupation">Ing. en Tecnologias de la Informacion</p>
+                            </div>
+                            <div>
+                                <p>
+                                    <i class="vossen-quote color"></i>
+                                    Todo su trabajo es personalizado y fue a mi gusto <br> Me asesoraron<span class="color">estupendamente,</span> y me recomendaron lo ideal para mi presupuesto y espacio. 
+                                    <i class="vossen-quote color"></i>
+                                </p>
+                                <h5><strong>Sergio Marquez Marquez</strong></h5>
+                                <p class="occupation">Trabajador Independiente</p>
+                            </div>
+                            <div>
+                                <p>
+                                    <i class="vossen-quote color"></i>
+                                    Me atendieron rapido y la entrega fue muy rapida <span class="color"> todo quedo excelente</span>.
+                                    <i class="vossen-quote color"></i>
+                                </p>
+                                <h5><strong>Vianey Vera Cano</strong></h5>
+                                <p class="occupation">Ama de casa</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="fun-facts" data-animate="true">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-4 counter">
+                        <h1 class="bold" data-count="200"></h1>
+                        <h5>Clientes Felices</h5>
+                    </div>
+                    <div class="col-sm-4 counter">
+                        <h1 class="bold" data-count="100"></h1>
+                        <h5>Envios Realizados</h5>
+                    </div>
+                    <div class="col-sm-4 counter">
+                        <h1 class="bold" data-count="240"></h1>
+                        <h5>Productos Ofrecidos</h5>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="parallax pt40 pb40" data-overlay-light="9">
+            <div class="background-image">
+                <img src="img/main3.jpg" alt="papel picado artesanal, boda mexicana, papel boda, papel china, papel picado calado, papel picado personalizado">
+            </div>
+            <div class="container">
+                <div class="row vertical-align">
+
+                    <div class="col-md-6 pr30 mt40 mb40">
+                        <h2><strong>Arte en Papel</strong><br>Papel picado artesanal</h2>
+                        <p>Somos artesanos dedicados a la elaboracion de papel picado artesnal con mas de 15 años de experiencia.</p>
+                        <p>Elaboramos papel picado para todo tipo de eventos, papel picado boda, papel picado xv años, personalizado, papel picado para empresas, papel picado graduacion, papel picado para bautizo, y mas.</p>
+                    </div>
+
+                    <div class="col-md-6 mt50 mb50">
+                        <div class="video-container">
+                            <img alt="papel picado calado boda, papel picado calado septiembre, papel picado calado personalizado, papel picado calado boda mexicana" src="img/main2.jpg" />
+                            <iframe data-video-embed="https://www.youtube.com/embed/B08iLAtS3AQ"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+       <section class="parallax pt110 pb70" data-overlay-dark="8">
+            <div class="background-image">
+                <img src="img/main5.jpg" alt="papel picado blanco, papel picado boda, boda mexicana">
+            </div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 details white text-center">
+                        <div class="phone-number mb10">
+                            <h1 class="bold">+ 52 1 249 138 3844</h1>
+                        </div>
+                        <div class="col-lg-12">
+                            <h3>huixcospartan@<span class="color">gmail.com</span></h3>
+                            <h4>San Salvador Huixcolotla, <span class="color">Puebla, Mexico</span></h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="works" class="pt100 pb110">
+            <div class="container">
+                <div class="row text-center">
+
+                    <div class="col-md-12 text-center pb20">
+                        <h2>Papel Picado Boda<br><strong>Boda Mexicana</strong></h2>
+                        <p class="lead">Elige tus diseños <span class="color">y </span> colores</p>
+                    </div>
+
+                    <div class="portfolio" data-gap="20">
+                        <ul class="vossen-portfolio-filters" data-initial-filter="*">
+                            <li data-filter="*">Mostrar todo</li>
+                            <li data-filter="PapelPicado">Papel Picado</li>
+                            <li data-filter="Manteles">Manteles</li>
+                        </ul>
+
+                        <div class="vossen-portfolio">
+
+                            <div class="col-md-4 col-sm-6" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Novios Personalizado</h4>
+                                            <p>Iniciales y Fecha</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="papel picado novios, papel picado personalizado boda, papel picado novios personalizado, papel picado calado novios, papel picado artesanal novios" src="img/boda/boda_1.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel Picado Multicolor Boda</h4>
+                                            <p>Papel Picado sin personalizar</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="papel picado multicolor, papel picado generico, papel picado multicolor calado, papel picado boda multicolor, papel picado artesanal multicolor" src="img/boda/boda_2.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-12" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel Picado Boda Corazon</h4>
+                                            <p>Tira de papel picado boda de corazon</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="papel picado boda corazon, tira de papel picado boda, papel picado corazon boda, papel picado calado corazon, tira de corazones, papel picado artesanal calado corazon" src="img/boda/boda_3.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Portfolio Item -->
+                            <div class="col-md-8 col-sm-6" data-filter="Manteles">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Mantel de Papel picado para mesa</h4>
+                                            <p>Mantel para mesa papel picado</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="mantel de papel picado, papel picado mantel, mantelitos en papel picado, papel picado manteles mesa" src="img/boda/boda_4.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel picado modelo #2</h4>
+                                            <p>Papel picado calado sin personalizar</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="papel picado calado para boda, papel picado rectangulo, papel picado artesanal calado" src="img/boda/boda_5.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel Picado Calado Boda | Modelo #3</h4>
+                                            <p>Diseño diferente con fecha e iniciales</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="Papel picado calado para boda artesanal, boda 2018, boda mexicana, boda de papel" src="img/boda/boda_6.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="PapelPicado">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel Picado Tradicional Blanco</h4>
+                                            <p>Papel picado artesanal Generico</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="Papel picado artesanal, papel picado boda blanco, papel picado boda 2018, papel picado blanco" src="img/boda/boda_7.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="Manteles">
+                                <a href="project-gallery.html">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Papel Picado Mantel para Mesa</h4>
+                                            <p>Papel picado Manteles</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="adornos para boda, boda mexicana, adornos mesa, adornos para boda mexicana, manteles calados, manteles en papel picado" src="img/boda/boda_8.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 col-sm-6" data-filter="Manteles">
+                                <a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <div class="portfolio-item">
+                                        <div class="item-caption">
+                                            <h4>Mantel de Papel Picado para plato</h4>
+                                            <p>Papel Picado Manteles</p>
+                                        </div>
+                                        <div class="item-image">
+                                            <img alt="Manteles, Mantel papel picado, papel picado blanco" src="img/boda/boda_9.jpg" />
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=5212491383844" class="btn btn-md btn-light btn-appear mt30"><span>Solicitar Catalogo Completo <i class="ion-arrow-right-c"></i></span></a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="parallax pt100 pb100" data-overlay-dark="9">
+            <div class="background-image">
+                <img src="img/main.jpg" alt="#">
+            </div>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-8 mr-auto text-center">
+                        <h2>Siguenos<br><strong>Follow Us</strong></h2>
+                        <p class="lead">Encuentranos en nuestras redes sociales</p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <ul class="connected-icons social-icons">
+
+                            <li class="connected-icon">
+                                <a target="_blank" href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/">
+                                    <i class="ion-social-facebook"></i>
+                                    <h5>Facebook</h5>
+                                    <p>Contactanos</p>
+                                </a>
+                            </li>
+
+                            <li class="connected-icon">
+                                <a target="_blank" href="https://www.youtube.com/channel/UCNFgTBP2Hkd5soisSdG9dJg">
+                                    <i class="ion-social-youtube"></i>
+                                    <h5>Youtube</h5>
+                                    <p>Mira nuestros videos</p>
+                                </a>
+                            </li>
+
+                            <li class="connected-icon">
+                                <a target="_blank" href="https://twitter.com/papelpicadohuix">
+                                    <i class="ion-social-twitter"></i>
+                                    <h5>Twitter</h5>
+                                    <p>Hastag</p>
+                                </a>
+                            </li>
+
+                            <li class="connected-icon">
+                                <a target="_blank" href="https://www.instagram.com/papelpicadosiempreperegrino/">
+                                    <i class="ion-social-instagram"></i>
+                                    <h5>Instagram</h5>
+                                    <p>Ve nuestras fotos</p>
+                                </a>
+                            </li>
+
+                            <li class="connected-icon">
+                                <a target="_blank" href="https://plus.google.com/112819896137273121757">
+                                    <i class="ion-social-googleplus"></i>
+                                    <h5>Google+</h5>
+                                    <p>Unete a nuestros contactos</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="1113959348620973"
+          theme_color="#0084ff"
+          logged_in_greeting="Papel Picado Siempre Peregrino Solicita tu cotizacion "
+          logged_out_greeting="Papel Picado Siempre Peregrino Solicita tu cotizacion ">
+        </div>
+        <footer id="footer" class="footer style-1 dark">
+
+            <a href="#" style="font-size:30px; margin-bottom:20px;"><strong>Papel Picado Siempre Peregrino</strong></a>
+            <ul>
+                <li  class="nav-icon"><a href="https://www.facebook.com/PapelPicadoSiemprePeregrinoHuixcolotla/" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                            <li  class="nav-icon"><a href="https://www.instagram.com/papelpicadosiempreperegrino/" target="_blank"><i class="ion-social-instagram"></i></a></li>
+                            <li  class="nav-icon"><a href="https://www.youtube.com/channel/UCqhJ9tspmmQnDLGF6AIyorg" target="_blank"><i class="ion-social-youtube"></i></a></li>
+                            <li  class="nav-icon"><a href="http://twitter.com/PapelPicadoHuix" target="_blank"><i class="ion-social-twitter"></i></a></li>
+            </ul>
+            <a href="#" target="_blank"><strong>©Papelpicado</strong></a>
+            <p>Papel picado artesanal</p>
+
+            <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span>
+
+        </footer>
+        
+        <script src="js/jquery.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/scripts.js"></script>
+
+    </body>
 </html>
